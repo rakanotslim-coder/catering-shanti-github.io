@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { itemVariants } from "./BentoGrid";
 import { MenuItem } from "@/constants/menu";
 import { WA_NUMBER } from "@/constants/config";
+import { WhatsAppBrandIcon } from "@/components/icons/WhatsAppIcon";
 
 interface MenuCardProps {
     item: MenuItem;
@@ -78,8 +79,9 @@ _Mohon segera dikonfirmasi ya, terima kasih!_`;
                         rel="noopener noreferrer"
                         whileTap={{ scale: 0.93 }}
                         whileHover={{ scale: 1.05 }}
-                        className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white transition-colors"
+                        className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white transition-colors"
                     >
+                        <WhatsAppBrandIcon className="w-3.5 h-3.5" />
                         Pesan
                     </motion.a>
                 </div>

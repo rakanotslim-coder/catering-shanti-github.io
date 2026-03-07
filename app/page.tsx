@@ -8,6 +8,7 @@ import { MapSection } from "@/components/MapSection";
 import { MENU_ITEMS } from "@/constants/menu";
 import { TESTIMONIALS } from "@/constants/testimonials";
 import { WA_NUMBER } from "@/constants/config";
+import { WhatsAppBrandIcon } from "@/components/icons/WhatsAppIcon";
 
 export default function HomePage() {
   const featuredMenus = MENU_ITEMS.slice(0, 4);
@@ -64,9 +65,10 @@ export default function HomePage() {
             href={`https://wa.me/${WA_NUMBER}?text=Halo%20Shanti%20Catering,%20saya%20ingin%20konsultasi%20menu%20custom%20untuk%20acara%20saya.%0A%0A*Estimasi%20jumlah%20tamu:*%20[isi%20di%20sini]%0A*Tanggal%20acara:*%20[isi%20di%20sini]%0A*Budget%20per%20orang:*%20[isi%20di%20sini]%0A*Catatan:*%20[isi%20di%20sini]%0A%0AMohon%20info%20ketersediaannya%20ya,%20terima%20kasih!`}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold rounded-2xl transition-colors whitespace-nowrap"
+            className="shrink-0 flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-2xl transition-colors whitespace-nowrap"
           >
-            💬 Konsultasi via WA
+            <WhatsAppBrandIcon className="w-5 h-5 fill-white border-white" />
+            Konsultasi via WA
           </a>
         </div>
       </section>

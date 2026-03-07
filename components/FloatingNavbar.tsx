@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sun, Moon, MessageCircle, UtensilsCrossed } from "lucide-react";
+import { Sun, Moon, UtensilsCrossed } from "lucide-react";
+import { WhatsAppBrandIcon } from "@/components/icons/WhatsAppIcon";
 import Image from "next/image";
 import { WA_NUMBER } from "@/constants/config";
 
@@ -78,9 +79,9 @@ export function FloatingNavbar() {
                         rel="noopener noreferrer"
                         whileTap={{ scale: 0.95 }}
                         whileHover={{ scale: 1.03 }}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold transition-colors shadow-md shadow-emerald-900/30"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-semibold transition-colors shadow-md shadow-emerald-900/30"
                     >
-                        <MessageCircle className="w-4 h-4" />
+                        <WhatsAppBrandIcon className="w-4 h-4" />
                         <span className="hidden sm:block whitespace-nowrap">Order via WA</span>
                     </motion.a>
 
