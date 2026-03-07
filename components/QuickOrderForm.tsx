@@ -22,6 +22,7 @@ const orderSchema = z.object({
     menuId: z.string({ message: "Silahkan pilih menu terlebih dahulu" }).min(1, "Silahkan pilih menu terlebih dahulu"),
     porsi: z.number({ message: "Masukkan jumlah porsi" }).min(20, "Minimal 20 porsi"),
     date: z.string().min(1, "Tanggal wajib diisi"),
+    alamat: z.string().min(5, "Alamat minimal 5 karakter"),
     notes: z.string().optional(),
 });
 
@@ -55,14 +56,21 @@ export function QuickOrderForm() {
             });
             if (!res.ok) throw new Error("Server error");
 
-            // 2. Susun pesan WhatsApp
+            // 2. Format tanggal ke "Hari, DD/MM/YYYY" (umum di Indonesia)
+            const [yyyy, mm, dd] = data.date.split("-");
+            const dateObj = new Date(`${yyyy}-${mm}-${dd}`);
+            const hariNama = dateObj.toLocaleDateString("id-ID", { weekday: "long" });
+            const formattedDate = `${hariNama}, ${dd}/${mm}/${yyyy}`;
+
+            // 3. Susun pesan WhatsApp
             const message = `*HALO SHANTI CATERING, SAYA MAU PESAN!*
 ---
 *Nama:* ${data.name}
 *No. WA:* ${data.phone}
 *Menu:* ${selectedMenu?.name ?? "Custom"}
 *Porsi:* ${data.porsi} porsi
-*Tanggal:* ${data.date}
+*Tanggal:* ${formattedDate}
+*Alamat Pengiriman:* ${data.alamat}
 *Catatan:* ${data.notes || "-"}
 ---
 _Mohon segera dikonfirmasi ya, terima kasih!_`;
@@ -248,7 +256,21 @@ _Mohon segera dikonfirmasi ya, terima kasih!_`;
                     </div>
                 </div>
 
-                {/* Row 4: Catatan */}
+                {/* Row 4: Alamat Pengiriman */}
+                <div className="space-y-1">
+                    <Label htmlFor="alamat" className="text-xs font-semibold text-muted-foreground">
+                        Alamat Pengiriman <span className="text-red-400">*</span>
+                    </Label>
+                    <Input
+                        id="alamat"
+                        placeholder="Jl. Contoh No.1, Kel. ..., Kec. ..., Surabaya"
+                        {...register("alamat")}
+                        className="rounded-xl"
+                    />
+                    {errors.alamat && <p className="text-xs text-red-400">{errors.alamat.message}</p>}
+                </div>
+
+                {/* Row 5: Catatan */}
                 <div className="space-y-1">
                     <Label htmlFor="notes" className="text-xs font-semibold text-muted-foreground">
                         Catatan (opsional)

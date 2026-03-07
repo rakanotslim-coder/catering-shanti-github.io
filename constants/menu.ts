@@ -6,6 +6,7 @@ export interface MenuItem {
     image: string;
     description: string;
     category: string;
+    filterCategory: 'makanan' | 'minuman' | 'jajanan';
 }
 
 // Placeholder image for items without photos yet
@@ -21,6 +22,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/rawon.jpg",
         description: "Sup daging sapi hitam khas Surabaya dengan kuah kluwek gurih, disajikan dengan nasi, tauge, dan telur asin.",
         category: "Masakan Jawa",
+        filterCategory: "makanan",
     },
     {
         id: 2,
@@ -30,6 +32,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/nasi-jagung.jpg",
         description: "Nasi jagung khas Jawa Timur dengan babat sapi yang dimasak empuk berbumbu, disajikan dengan sambal dan lalapan.",
         category: "Masakan Jawa Timur",
+        filterCategory: "makanan",
     },
     {
         id: 3,
@@ -39,6 +42,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/pecel.jpg",
         description: "Sayuran segar rebus disiram bumbu kacang Madiun yang gurih dan pedas, disajikan dengan lontong dan rempeyek.",
         category: "Masakan Jawa",
+        filterCategory: "makanan",
     },
     {
         id: 4,
@@ -48,6 +52,17 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/gado-gado.jpg",
         description: "Sayuran rebus, tahu, tempe, dan telur dengan saus kacang khas Betawi yang kental dan gurih.",
         category: "Masakan Betawi",
+        filterCategory: "makanan",
+    },
+    {
+        id: 19,
+        name: "Bakso Komplit",
+        price: "Rp 20.000",
+        tag: "Best Seller",
+        image: "/images/bakso.jpg",
+        description: "Bakso komplit dengan isian bakso halus, bakso urat, tahu, dan mie kuning. Cocok untuk acara adat dan pengajian.",
+        category: "Masakan Favorit",
+        filterCategory: "makanan",
     },
     {
         id: 5,
@@ -57,6 +72,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/nasi-goreng.jpg",
         description: "Nasi goreng wok dengan udang, ayam, dan sayuran pilihan, topping telur mata sapi dan kerupuk renyah.",
         category: "Oriental",
+        filterCategory: "makanan",
     },
     {
         id: 6,
@@ -66,6 +82,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/soto.jpg",
         description: "Kuah bening kuning kunyit dengan ayam suwir, bihun, telur rebus, dan taburan bawang goreng khas Lamongan.",
         category: "Masakan Jawa",
+        filterCategory: "makanan",
     },
 
     // ── Masakan Jawa ────────────────────────────────────────────
@@ -77,6 +94,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/gudeg-jogja.jpg",
         description: "Gudeg nangka muda masak santan khas Yogyakarta, manis gurih, disajikan dengan krecek, ayam, dan telur.",
         category: "Masakan Jawa",
+        filterCategory: "makanan",
     },
     {
         id: 9,
@@ -86,6 +104,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/nasi-liwet-solo.jpg",
         description: "Nasi gurih dimasak santan khas Solo, disajikan dengan sayur labu, suwiran ayam, dan telur pindang.",
         category: "Masakan Jawa",
+        filterCategory: "makanan",
     },
 
     // ── Masakan Jawa Timur ──────────────────────────────────────
@@ -97,15 +116,17 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/bebek-goreng.jpg",
         description: "Bebek kampung diungkep rempah khas Jawa Timur lalu digoreng crispy, disajikan dengan sambal korek dan lalapan.",
         category: "Masakan Jawa Timur",
+        filterCategory: "makanan",
     },
     {
         id: 11,
         name: "Lontong Balap Surabaya",
         price: "Rp 20.000",
         tag: "Khas Jatim",
-        image: "/images/lontong-balap.jpg",
+        image: "/images/lontong-balap-sby.jpg",
         description: "Lontong dengan tauge, tahu goreng, lento, dan disiram kuah kaldu sapi gurih, ditaburi bawang goreng.",
         category: "Masakan Jawa Timur",
+        filterCategory: "makanan",
     },
     {
         id: 12,
@@ -115,6 +136,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/tahu-campur.jpg",
         description: "Kuah petis sapi khas Lamongan dengan tahu goreng, perkedel singkong, tauge, dan mie kuning.",
         category: "Masakan Jawa Timur",
+        filterCategory: "makanan",
     },
     {
         id: 15,
@@ -124,6 +146,7 @@ export const MENU_ITEMS: MenuItem[] = [
         image: "/images/tahu-tek.jpg",
         description: "Tahu goreng setengah matang dan lontong disiram bumbu kacang petis khas Surabaya yang kental dan kaya rasa.",
         category: "Masakan Jawa Timur",
+        filterCategory: "makanan",
     },
 
     // ── Masakan Betawi & Peranakan ──────────────────────────────
@@ -132,18 +155,20 @@ export const MENU_ITEMS: MenuItem[] = [
         name: "Soto Betawi",
         price: "Rp 28.000",
         tag: "Baru",
-        image: PH,
+        image: "/images/soto-betawi.jpg",
         description: "Soto berkuah santan putih kental khas Betawi dengan daging sapi, jeroan pilihan, tomat, dan emping.",
         category: "Masakan Betawi",
+        filterCategory: "makanan",
     },
     {
         id: 13,
         name: "Lontong Cap Go Meh",
         price: "Rp 22.000",
         tag: "Peranakan",
-        image: PH,
+        image: "/images/lontong-cap-go-meh.jpg",
         description: "Lontong khas perayaan Cap Go Meh dengan opor ayam, sambal goreng ati, acar, dan telur pindang.",
         category: "Peranakan",
+        filterCategory: "makanan",
     },
 
     // ── Oriental ────────────────────────────────────────────────
@@ -152,9 +177,10 @@ export const MENU_ITEMS: MenuItem[] = [
         name: "Ayam Canton",
         price: "Rp 38.000",
         tag: "Oriental",
-        image: PH,
+        image: "/images/ayam-canton.jpg",
         description: "Ayam bumbu Canton masak saus tiram dengan sayuran segar, jamur, dan saus wok smoky khas oriental.",
         category: "Oriental",
+        filterCategory: "makanan",
     },
 
     // ── Kue & Snack ─────────────────────────────────────────────
@@ -163,26 +189,81 @@ export const MENU_ITEMS: MenuItem[] = [
         name: "Banana Cake & Sifon",
         price: "Rp 20.000",
         tag: "Dessert",
-        image: PH,
+        image: "/images/banana-cake.jpg",
         description: "Kue lembut pilihan: banana cake legit dan chiffon cake ringan berbagai rasa. Cocok untuk hampers, snack box, dan tasyakuran.",
         category: "Kue & Dessert",
+        filterCategory: "jajanan",
     },
     {
         id: 17,
         name: "Gorengan",
         price: "Rp 12.000",
         tag: "Snack",
-        image: PH,
+        image: "/images/gorengan.jpg",
         description: "Paket gorengan hangat: bakwan, risoles, tahu isi, dan pastel crispy — cocok untuk coffee break dan snack box.",
         category: "Snack & Gorengan",
+        filterCategory: "jajanan",
     },
     {
         id: 18,
         name: "Jajan Pasar",
         price: "Rp 15.000",
         tag: "Tradisional",
-        image: PH,
+        image: "/images/jajan-pasar.jpg",
         description: "Aneka kue tradisional: klepon, onde-onde, lemper, putu ayu, dan nagasari. Cocok untuk acara adat dan pengajian.",
         category: "Kue Tradisional",
+        filterCategory: "jajanan",
+    },
+
+    // ── Minuman & Refreshment ──────────────────────────────────
+    {
+        id: 20,
+        name: "Es Manado",
+        price: "Rp 15.000",
+        tag: "Segar",
+        image: PH,
+        description: "Minuman segar khas Manado dengan sirsak, kelapa muda, jelly, dan mutiara. Manis, asam, dan sangat menyegarkan.",
+        category: "Minuman",
+        filterCategory: "minuman",
+    },
+    {
+        id: 21,
+        name: "Es Teler",
+        price: "Rp 18.000",
+        tag: "Favorit",
+        image: PH,
+        description: "Perpaduan alpukat, nangka, dan kelapa muda dalam kuah santan yang manis dan dingin. Menu favorit untuk pencuci mulut.",
+        category: "Minuman",
+        filterCategory: "minuman",
+    },
+    {
+        id: 22,
+        name: "Es Degan Jeruk",
+        price: "Rp 15.000",
+        tag: "Alami",
+        image: PH,
+        description: "Air kelapa muda murni dicampur dengan perasan jeruk peras asli. Alami dan menyegarkan tenggorokan.",
+        category: "Minuman",
+        filterCategory: "minuman",
+    },
+    {
+        id: 23,
+        name: "Es Kuwut",
+        price: "Rp 12.000",
+        tag: "Khas Bali",
+        image: PH,
+        description: "Minuman khas Bali dengan serutan kelapa, melon, biji selasih, dan segarnya air lemon. Sangat cocok dinikmati saat siang hari.",
+        category: "Minuman",
+        filterCategory: "minuman",
+    },
+    {
+        id: 24,
+        name: "Paket Coffee Break",
+        price: "Rp 25.000",
+        tag: "Lengkap",
+        image: PH,
+        description: "Paket kopi dan teh hangat disajikan dengan 2 macam kue jajanan pasar. Cocok untuk meeting, seminar, dan acara kantor.",
+        category: "Refreshment",
+        filterCategory: "minuman",
     },
 ];

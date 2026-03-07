@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { itemVariants } from "./BentoGrid";
-import { Badge } from "@/components/ui/badge";
 import { MenuItem } from "@/constants/menu";
+import { WA_NUMBER } from "@/constants/config";
 
 interface MenuCardProps {
     item: MenuItem;
@@ -20,6 +20,19 @@ const tagColors: Record<string, string> = {
 
 export function MenuCard({ item }: MenuCardProps) {
     const tagClass = tagColors[item.tag] ?? "bg-zinc-500/20 text-zinc-300 border-zinc-500/30";
+
+    const message = `*HALO SHANTI CATERING, SAYA MAU PESAN!*
+---
+*Menu:* ${item.name} (${item.price}/porsi)
+*Nama:* [isi nama kamu]
+*No. WA:* [isi nomor WA]
+*Porsi:* [isi jumlah porsi]
+*Tanggal Acara:* [isi tanggal]
+*Catatan:* [isi catatan / -]
+---
+_Mohon segera dikonfirmasi ya, terima kasih!_`;
+
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 
     return (
         <motion.div
@@ -43,7 +56,7 @@ export function MenuCard({ item }: MenuCardProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <div className="absolute top-3 left-3">
                     <span
-                        className={`inline-flex px-2.0 py-0.5 text-[10px] font-semibold rounded-full border backdrop-blur-sm ${tagClass}`}
+                        className={`inline-flex px-3 py-1 text-[10px] font-semibold rounded-full border backdrop-blur-sm ${tagClass}`}
                     >
                         {item.tag}
                     </span>
@@ -60,7 +73,7 @@ export function MenuCard({ item }: MenuCardProps) {
                 <div className="mt-auto pt-3 flex items-center justify-between">
                     <span className="font-bold text-emerald-600 dark:text-emerald-400 text-base">{item.price}</span>
                     <motion.a
-                        href={`https://wa.me/6281234567890?text=Halo%20Shanti%20Catering%2C%20saya%20ingin%20memesan%20${encodeURIComponent(item.name)}!`}
+                        href={waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileTap={{ scale: 0.93 }}

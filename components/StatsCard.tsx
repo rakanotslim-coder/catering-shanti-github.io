@@ -5,7 +5,7 @@ import { itemVariants } from "./BentoGrid";
 import { Star, ShoppingBag, UtensilsCrossed, Clock } from "lucide-react";
 
 const stats = [
-    { icon: ShoppingBag, value: "500+", label: "Pesanan Selesai" },
+    { icon: ShoppingBag, value: "5rb+", label: "Pesanan Selesai" },
     { icon: Star, value: "4.9★", label: "Rating Pelanggan" },
     { icon: UtensilsCrossed, value: "15+", label: "Varian Menu" },
     { icon: Clock, value: "H-1", label: "Pemesanan" },
